@@ -16,7 +16,7 @@ class Listing:
     self.price = price
       
 class Listings:  
-  # create 100 empty listings
+  # create 100 empty listings or a user inputted amount
   def __init__(self, size = 100):
     self.data = []
     self.size = size
@@ -33,10 +33,13 @@ class Listings:
   
   
 ls = Listings()
-
 ls.showAllListings() # should print 100 blank lines
 
 print("----------")
 
 ls.addListing(Listing("apple", 22)) # should print 100 blank lines and 1 defined Listing
 ls.showAllListings()
+
+print("----------")
+ns = Listings(20)
+ns.showAllListings() # should print 20 blank lines

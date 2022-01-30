@@ -1,9 +1,5 @@
-class Listing:
-  def __init__(self):
-      self.name = ""
-      self.price = 0
-
-  def __init__(self, name, price):
+class Listing: 
+  def __init__(self, name = " ", price = 0):
       self.name = name
       self.price = price
 

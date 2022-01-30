@@ -1,14 +1,5 @@
-
-
-class Listing:
-  name = ""
-  price = 0
-  
-  def __init__(self):
-      self.name = ""
-      self.price = 0
-
-  def __init__(self, name, price):
+class Listing: 
+  def __init__(self, name = " ", price = 0):
       self.name = name
       self.price = price
 
@@ -26,7 +17,7 @@ class Listing:
   
   
 def calcAvg(totalPrice, numItems):
-  print(totalPrice / numItems)
+  print(int(totalPrice) / int(numItems))
 
 def processItems():
   addItem = True
@@ -50,7 +41,7 @@ def processItems():
   totalPrice = 0
 
   for item in list:
-    print(item.name + ", $" + item.price)
+    print("Name: " + item.name + ", Price: $" + item.price)
     totalPrice += int(item.price)
     
     if (item.name == "peas" or item.name == "Peas"):
