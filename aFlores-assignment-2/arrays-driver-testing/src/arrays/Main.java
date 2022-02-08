@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// testing/driver program
 package arrays;
 
 /**
@@ -17,8 +13,9 @@ public class Main {
     public static void main(String[] args) {
         StudentListings db = new StudentListings();
         
+        // should print nothing, as the array is empty
         System.out.println("Expect: Length 0, Result: Length " + db.getArrLength());
-        db.printArr(); // should print nothing, as the array is empty
+        db.printArr();
 
         // append a new student to end of db
         StudentNode andres = new StudentNode("Andres", 101, 4.0);

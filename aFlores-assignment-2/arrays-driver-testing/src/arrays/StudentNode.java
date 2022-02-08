@@ -5,8 +5,11 @@
  */
 package arrays;
 
+/**
+ *
+ * @author andres
+ */
 public class StudentNode {
-
     String name;
     int id;
     double gpa;
