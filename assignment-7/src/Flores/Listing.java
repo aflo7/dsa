@@ -2,7 +2,7 @@
 package Flores;
 
 // name, id, gpa
-// sort by id for now
+// sort by id for now. need to sort by name
 
 public class Listing {
     String name;
