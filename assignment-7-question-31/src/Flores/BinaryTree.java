@@ -2,6 +2,7 @@ package Flores;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 
 public class BinaryTree {
 
@@ -9,6 +10,18 @@ public class BinaryTree {
 
     BinaryTree() {
         root = null;
+    }
+
+    public Listing createNewListing() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter name: ");
+        String name = sc.nextLine();
+        System.out.println("Enter id: ");
+        int id = sc.nextInt();
+        System.out.println("Enter gpa: ");
+        double gpa = sc.nextDouble();
+
+        return new Listing(name, id, gpa);
     }
 
     public void insert(Listing L) {
@@ -49,6 +62,29 @@ public class BinaryTree {
             return findNodeHelper(current.left, name);
         } else {
             return findNodeHelper(current.right, name);
+        }
+
+    }
+
+    // find node by name and then update
+    public boolean findNodeAndUpdate(Listing node, String newName, int newID, double newGPA) {
+        return findNodeAndUpdateHelper(root, node.getName(), newName, newID, newGPA);
+    }
+
+    public boolean findNodeAndUpdateHelper(Listing current, String name, String newName, int newID, double newGPA) {
+        if (current == null) {
+            return false;
+        }
+        if (name.compareTo(current.getName()) == 0) {
+            current.setName(newName);
+            current.setID(newID);
+            current.setGPA(newGPA);
+            return true;
+        }
+        if (name.compareTo(current.getName()) < 0) {
+            return findNodeAndUpdateHelper(current.left, name, newName, newID, newGPA);
+        } else {
+            return findNodeAndUpdateHelper(current.right, name, newName, newID, newGPA);
         }
 
     }
@@ -101,7 +137,7 @@ public class BinaryTree {
     public void inOrderDFS(Listing node) {
         if (node != null) {
             inOrderDFS(node.left);
-            System.out.print("Name: " + node.getName() + ", ID " + node.getID());
+            System.out.print("[Name: " + node.getName() + ", ID: " + node.getID() + "GPA: " + node.getGPA() + "]");
             System.out.println();
             inOrderDFS(node.right);
         }
