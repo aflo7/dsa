@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Graph {
 
-    // graph with underlying Adjacency List
+    // unweighted graph with Adjacency List
     public Map<Vertex, List<Vertex>> adjVertices = new HashMap<>();
 
     public void addVertex(String label) {
